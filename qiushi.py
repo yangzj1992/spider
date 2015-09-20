@@ -55,9 +55,7 @@ class QSBK:
             #如果不含有图片，把它加入list中
             if not haveImg:
                 replaceBR = re.compile('<br/>')
-                replacequot = re.compile('&quot')
                 text = re.sub(replaceBR,"\n",item[1])
-                text = re.sub(replaceBR,"'",item[1])
                 #item[0]是一个段子的发布者，item[1]是内容，item[2]是发布时间,item[4]是点赞数
                 pageStories.append([item[0].strip(),text.strip(),item[2].strip(),item[4].strip()])
         return pageStories
